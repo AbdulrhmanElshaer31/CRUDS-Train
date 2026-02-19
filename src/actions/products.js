@@ -1,4 +1,3 @@
-
 // This file contains CRUDS opreation for products
 const apiUrl = 'https://fakestoreapi.com';
 
@@ -17,9 +16,11 @@ export async function getAllProducts() {
             return {
                 message: "Can't laod products please refresh the page!",
                 success: false,
-                data : null
+        
             }
         }
+            console.log(response);
+            
             return {
                 message: "Products loaded successfully!",
                 success: true,
@@ -30,7 +31,7 @@ export async function getAllProducts() {
         return {
                 message: "internet connection error",
                 success: false,
-                data : null
+               
             }
     }
 }
@@ -50,7 +51,6 @@ export async function getProductById(id) {
             return {
                 message: "Can't laod product data please refresh the page!",
                 success: false,
-                data : null
             }
         }
             return {
@@ -63,7 +63,6 @@ export async function getProductById(id) {
         return {
                 message: "internet connection error",
                 success: false,
-                data : null
             }
     }
 }
