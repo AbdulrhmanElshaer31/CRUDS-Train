@@ -114,7 +114,7 @@ export default function Collection() {
         </div>
 
         {/* Filter + Cards */}
-        <div className="w-full h-full flex flex-col md:flex-row my-5">
+        <div className="w-full h-full flex  flex-col md:flex-row my-5">
 
           {/* Mobile Filter Toggle Button */}
           <div className="md:hidden flex items-center justify-between px-4 mb-3">
@@ -157,7 +157,7 @@ export default function Collection() {
               </p>
             </div>
 
-            {/* Cards Grid */}
+            {/* Cards  */}
             <div className="flex flex-wrap justify-center gap-4 sm:gap-5 p-2 px-4 sm:px-2">
               {filteredProducts.map((product) => (
                 <Cards key={product.id} product={product} />

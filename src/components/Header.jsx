@@ -1,5 +1,5 @@
 // Header.jsx
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -10,12 +10,11 @@ export default function Header() {
     { name: "Home", path: "/" },
     { name: "Collection", path: "/collection" },
   ];
-  
+
   const icons = [
-    <Search key="search" />, 
-    <Heart key="heart" />, 
-    <ShoppingCart key="cart" />, 
-    <User key="user" />
+    { icon: <Search size={22} />, path: "/search" },
+    { icon: <Heart size={22} />, path: "/favourites" },
+    { icon: <ShoppingCart size={22} />, path: "/cart" },
   ];
 
   return (
@@ -35,13 +34,26 @@ export default function Header() {
       <ul className="hidden lg:flex gap-8 xl:gap-20">
         {paths.map((ele, ind) => (
           <li key={ind} className="group">
-            <Link
+            <NavLink
               to={ele.path}
-              className="hover:text-[#D4AF37] font-semibold transition-all group duration-300"
+              end
+              className={({ isActive }) =>
+                `font-semibold transition-all duration-300 ${
+                  isActive ? "text-[#D4AF37]" : "hover:text-[#D4AF37]"
+                }`
+              }
             >
-              {ele.name}
-            </Link>
-            <div className="w-0 group-hover:w-full transition-all duration-300 h-0.5 bg-[#D4AF37]"></div>
+              {({ isActive }) => (
+                <>
+                  {ele.name}
+                  <div
+                    className={`h-0.5 bg-[#D4AF37] transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></div>
+                </>
+              )}
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -49,11 +61,17 @@ export default function Header() {
       {/* Desktop Icons */}
       <ul className="hidden md:flex gap-4 lg:gap-8">
         {icons.map((ele, ind) => (
-          <li
-            className="hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer"
-            key={ind}
-          >
-            {ele}
+          <li key={ind}>
+            <NavLink
+              to={ele.path}
+              className={({ isActive }) =>
+                `transition-colors duration-300 cursor-pointer ${
+                  isActive ? "text-[#D4AF37]" : "hover:text-[#D4AF37]"
+                }`
+              }
+            >
+              {ele.icon}
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -73,23 +91,37 @@ export default function Header() {
           <ul className="flex flex-col py-4">
             {paths.map((ele, ind) => (
               <li key={ind} className="border-b border-gray-100">
-                <Link
+                <NavLink
                   to={ele.path}
-                  className="block px-6 py-3 hover:bg-gray-50 hover:text-[#D4AF37] font-semibold transition-all duration-300"
+                  end
+                  className={({ isActive }) =>
+                    `block px-6 py-3 font-semibold transition-all duration-300 ${
+                      isActive
+                        ? "text-[#D4AF37] bg-gray-50"
+                        : "hover:bg-gray-50 hover:text-[#D4AF37]"
+                    }`
+                  }
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {ele.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
           <ul className="flex justify-center gap-8 py-4 border-t border-gray-100 md:hidden">
             {icons.map((ele, ind) => (
-              <li
-                className="hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer"
-                key={ind}
-              >
-                {ele}
+              <li key={ind}>
+                <NavLink
+                  to={ele.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `transition-colors duration-300 cursor-pointer ${
+                      isActive ? "text-[#D4AF37]" : "hover:text-[#D4AF37]"
+                    }`
+                  }
+                >
+                  {ele.icon}
+                </NavLink>
               </li>
             ))}
           </ul>

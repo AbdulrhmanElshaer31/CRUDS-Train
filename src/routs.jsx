@@ -9,7 +9,6 @@ import Cart from "./pages/(dashboard)/Cart"
 import CheckOut from "./pages/(dashboard)/CheckOut"
 import Favourit from "./pages/(dashboard)/Favourit"
 import ProductDetails from "./pages/(dashboard)/ProductDetails"
-import UserSettings from "./pages/(dashboard)/UserSettings"
 //not found page
 import NotFound from "./pages/NotFound"
 import { createBrowserRouter } from "react-router-dom"
@@ -34,7 +33,7 @@ export default function routs() {
         element:<Cart/>
       },
       {
-        path: "check-out",
+        path: "checkout",
         element:<CheckOut/>
       },
       {
@@ -42,17 +41,11 @@ export default function routs() {
         element: <ProductDetails />
       },
       {
-        path: "settings",
-        element:<UserSettings/>
-      },
-      {
         path: "favourites",
         element:<Favourit/>
       }
     ]
   },
-      
-   
       
             //not found rout
       {

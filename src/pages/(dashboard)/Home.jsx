@@ -36,12 +36,12 @@ export default function Home() {
   const heroBanner = [
     {
       head: "10K",
-      icon: <Plus color="#D4AF37" />,
+      icon: <Plus color="gray" />,
       info: "Happy Customers",
     },
     {
       head: "500",
-      icon: <Plus color="#D4AF37" />,
+      icon: <Plus color="gray" />,
       info: "Premium Products",
     },
     {
