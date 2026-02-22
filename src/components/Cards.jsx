@@ -1,3 +1,4 @@
+ 
 import { Star, ShoppingCart, Eye, Heart } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -86,14 +87,18 @@ export default function Cards({ product }) {
         <img
           src={product.image}
           alt={product.title}
-          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-all duration-500"
+          onClick={() => navigate(`/product/${product.id}`)}
+          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-all duration-500 cursor-pointer"
         />
       </div>
 
       {/* Product Info */}
       <div className="p-4 sm:p-5 flex flex-col gap-2 sm:gap-3 flex-1">
         <p className="font-bold text-xs uppercase text-gray-500">{product.category}</p>
-        <p className="text-base sm:text-lg font-semibold hover:text-[#D4AF37] transition-colors duration-300 line-clamp-2 min-h-10 sm:min-h-12">
+        <p
+          onClick={() => navigate(`/product/${product.id}`)}
+          className="text-base sm:text-lg font-semibold hover:text-[#D4AF37] transition-colors duration-300 line-clamp-2 min-h-10 sm:min-h-12 cursor-pointer"
+        >
           {product.title}
         </p>
         <div className="flex items-center gap-1">
