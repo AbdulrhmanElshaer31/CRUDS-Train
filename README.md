@@ -54,9 +54,10 @@ The project focuses on:
     ├── components/      # Reusable UI components
     ├── pages/           # Application pages
     ├── hooks/           # Custom hooks
-    ├── services/        # API logic
+    │── routs/           # Routs Of Application
+    ├── actions/        # API logic
     ├── assets/          # Static files
-    └── App.jsx
+    └── Main.jsx
 
 ------------------------------------------------------------------------
 
