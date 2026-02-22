@@ -45,6 +45,7 @@ export default function Cart() {
     setCartItems((prev) => {
       const updated = prev.filter((item) => item.id !== id);
       localStorage.setItem("cart", JSON.stringify(updated.map(({ id, quantity }) => ({ id, quantity }))));
+      window.dispatchEvent(new Event("cartUpdated"));
       return updated;
     });
   };

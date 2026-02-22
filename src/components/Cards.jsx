@@ -1,4 +1,3 @@
- 
 import { Star, ShoppingCart, Eye, Heart } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +19,7 @@ export default function Cards({ product }) {
       : [...favs, product.id];
     localStorage.setItem("favorites", JSON.stringify(updated));
     setIsFavorite(!isFavorite);
+    window.dispatchEvent(new Event("favUpdated"));
   };
 
   // ── Cart state ───────────────────────────────────────────────
@@ -34,6 +34,7 @@ export default function Cards({ product }) {
       const updated = [...cart, { id: product.id, quantity: 1 }];
       localStorage.setItem("cart", JSON.stringify(updated));
       setAddedToCart(true);
+      window.dispatchEvent(new Event("cartUpdated"));
     }
   };
 
