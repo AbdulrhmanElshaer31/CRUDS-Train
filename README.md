@@ -1,26 +1,6 @@
-# 🛍️ Luxery -- Modern E-Commerce Web App
+ Luxery -- Modern E-Commerce Web App
 
-```{=html}
-<p align="center">
-```
-`<a href="https://luxery.vercel.app/">`{=html}`<strong>`{=html}🌍 Live
-Demo`</strong>`{=html}`</a>`{=html} •
-`<a href="https://github.com/AbdulrhmanElshaer31/E-Commerce">`{=html}`<strong>`{=html}📂
-Repository`</strong>`{=html}`</a>`{=html}
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
-`<img src="https://img.shields.io/badge/React-19-blue?logo=react" />`{=html}
-`<img src="https://img.shields.io/badge/Vite-Fast-purple?logo=vite" />`{=html}
-`<img src="https://img.shields.io/badge/TailwindCSS-Modern-38B2AC?logo=tailwind-css" />`{=html}
-`<img src="https://img.shields.io/badge/API-FakeStore-green" />`{=html}
-`<img src="https://img.shields.io/badge/Deployment-Vercel-black?logo=vercel" />`{=html}
-```{=html}
-</p>
-```
+
 
 ------------------------------------------------------------------------
 
